@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="view_crm_apply_person_channel" model="ir.ui.view">
+        <field name="name">crm.apply.person.channel.form</field>
+        <field name="model">crm.apply.person.channel</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="user_id"/>
+                    </group>
+                    <group>
+                        <field name="team_id"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_apply" string="Apply" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window
+        id="action_crm_apply_person_channel"
+        multi="True"
+        key2="client_action_multi" name="Apply Sale Person Channel"
+        res_model="crm.apply.person.channel" src_model="crm.lead"
+        view_mode="form" target="new" view_type="form"
+        view_id="view_crm_apply_person_channel"
+    />
+</odoo>
