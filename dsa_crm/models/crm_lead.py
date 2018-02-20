@@ -8,8 +8,8 @@ class CrmLead(models.Model):
     @api.multi
     def handle_partner_assignation(self,  action='create', partner_id=False):
         res = super(CrmLead, self).handle_partner_assignation()
-        for lead in self:
+        for lead, partner in res.items():
             if action == 'create':
-                partner = lead._create_lead_partner()
-                partner.ref = 'CRM_' + str(lead.id)
-        return res
+                partner = self.env['res.partner'].browse(partner)
+                partner.ref = 'CRM_' + str(lead)
+        return res 
