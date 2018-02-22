@@ -11,5 +11,5 @@ class CrmLead(models.Model):
         for lead, partner in res.items():
             if action == 'create':
                 partner = self.env['res.partner'].browse(partner)
-                partner.ref = 'CRM_' + str(lead)
+                partner.ref = self.env['ir.sequence'].next_by_code('res.partner.seq') or _('000001')
         return res 

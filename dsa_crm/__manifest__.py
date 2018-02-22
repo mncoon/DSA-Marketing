@@ -10,6 +10,7 @@
     'category' : '',
     'data': [
         'wizard/crm_apply_sale_person_channel_views.xml',
+        'data/ir_sequence_data.xml',
     ],
     'demo': [],
     'installable': True,
