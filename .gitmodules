@@ -2,3 +2,8 @@
 	path = OCA/bank-payment
 	url = git@github.com:OCA/bank-payment.git
 	branch = 11.0
+
+[submodule "syscoon/accounting"]
+	path = syscoon/accounting
+	url = git@github.com:syscoon/accounting.git
+	branch = 11.0
